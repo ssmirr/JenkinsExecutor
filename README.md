@@ -72,7 +72,7 @@ Removing nginx.
 
     ansible all -s -m apt -i inventory -a 'pkg=nginx state=absent update_cache=true'
 
-Actually, nginx is a metapackage, show you also need to run this:
+Actually, nginx is a metapackage, so you also need to run this:
 
     ansible all -s -m shell -i inventory -a 'sudo apt-get -y autoremove'
     
@@ -81,7 +81,7 @@ Webserver should be dead.
 #### Setting up the executor
 
 * Running ping: `ansible all -m ping -i inventory`
-* Setting up roles: `ansible-playbook roles.yml`
+* Setting up roles: `ansible-playbook roles.yml -i inventory`
 * Running install: `ansible-playbook main.yml -i inventory`
 * Testing remote connection: `ssh -i jenkins_rsa vagrant@192.168.14.100`
 
