@@ -5,7 +5,7 @@
       command: mkdir -p /etc/ansible/roles
 
     - name: install roles
-      command: ansible-galaxy install --roles-path /etc/ansible/roles {{item}}
+      command: ansible-galaxy install --force --roles-path /etc/ansible/roles {{item}}
       with_items:
         - geerlingguy.java
         - geerlingguy.mysql
